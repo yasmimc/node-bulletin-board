@@ -1,0 +1,10 @@
+version: 0.2
+
+phases:
+    pre-build:
+        commands:
+            - echo Logging into Amazon ECR
+            - aws --version
+            - $(aws ecr get-login --region us-east-1 --no-include-email)
+            - REPOSITORY_URI=
+            - COMMIT_HASH=
